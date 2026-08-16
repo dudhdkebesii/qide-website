@@ -55,7 +55,9 @@ document.querySelectorAll('.filter-bar .fbtn').forEach(btn=>{
   });
 });
 
-// 产品卡片：点击展开详情
-document.querySelectorAll('.pcard').forEach(card=>{
-  card.addEventListener('click',()=>card.classList.toggle('open'));
-});
+// 产品详情页：从 URL hash 读取产品名
+if(location.pathname.indexOf('product-detail')>=0){
+  const name=decodeURIComponent((location.hash||'').replace('#',''))||'改性尼龙复合材料';
+  document.querySelectorAll('[data-pname]').forEach(el=>el.textContent=name);
+  document.title=name+' · 奇德新材';
+}
