@@ -215,6 +215,19 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 .ms-desc{font-size:12px;color:var(--muted);line-height:1.55}
 @keyframes msScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* 资质认证卡片（悬停展示权威性） */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cert-card{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.3s;overflow:hidden}
+.cert-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--cyan));opacity:0;transition:.3s}
+.cert-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.cert-card:hover::before{opacity:1}
+.cert-name{font-size:20px;font-weight:800;color:var(--accent-ink);letter-spacing:.02em}
+.cert-label{font-size:13px;color:var(--ink-2);margin-top:2px;font-weight:600}
+.cert-desc{max-height:0;opacity:0;overflow:hidden;font-size:13px;color:var(--muted);line-height:1.7;margin-top:0;transition:max-height .45s ease,opacity .45s ease,margin .45s ease}
+.cert-card:hover .cert-desc{max-height:180px;opacity:1;margin-top:12px}
+@media (max-width:960px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cert-grid{grid-template-columns:1fr}}
+
 /* 表格 */
 .spec-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .spec-table th{background:var(--bg-soft);text-align:left;padding:14px 16px;font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line)}
