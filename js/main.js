@@ -4,8 +4,18 @@ if(navToggle)navToggle.addEventListener('click',()=>menu.classList.toggle('open'
 if(menu)menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
 
 // 滚动渐显
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const sib=e.target.parentElement?e.target.parentElement.children:[];
+  const idx=Array.from(sib).indexOf(e.target);
+  e.target.style.transitionDelay=Math.min(idx*70,350)+'ms';
+  e.target.classList.add('in');io.unobserve(e.target);
+}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// 公司图片：色块 → 图片滚动浮现
+const fio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');fio.unobserve(e.target)}}),{threshold:.35});
+document.querySelectorAll('.about-visual .frame').forEach(f=>fio.observe(f));
 
 // 数字滚动
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.count,d=1400,t0=performance.now();(function tick(t){const p=Math.min((t-t0)/d,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)})(t0);cio.unobserve(el)}),{threshold:.6});
