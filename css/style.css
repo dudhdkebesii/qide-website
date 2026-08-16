@@ -51,7 +51,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdr
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.25s;border-radius:2px}
 
 /* ============ 首页 Hero ============ */
-.hero{position:relative;background:radial-gradient(1200px 600px at 80% -10%,#123456 0%,var(--navy) 45%,#060f1c 100%);color:#fff;overflow:hidden}
+.hero{position:relative;background-color:var(--navy);background-size:cover;background-position:center;color:#fff;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 20%,#000 30%,transparent 75%)}
 .hero .glow{position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.35),transparent 65%);filter:blur(10px)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:96px;padding-bottom:110px}
@@ -97,8 +97,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdr
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.28s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
-.card .thumb{height:160px;position:relative;display:grid;place-items:center;color:#fff;font-weight:800;font-size:30px;letter-spacing:.05em}
-.card .thumb::after{content:"";position:absolute;inset:0;background:radial-gradient(200px 120px at 80% 20%,rgba(255,255,255,.22),transparent 60%)}
+.card .thumb{height:160px;position:relative;background-size:cover;background-position:center;background-color:#eef1f6}
 .card .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
 .card p{font-size:14px;color:var(--muted);flex:1}
 .card .link{margin-top:18px;font-size:14px;font-weight:600;color:var(--accent-ink);display:inline-flex;align-items:center;gap:6px}
