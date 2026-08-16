@@ -214,6 +214,7 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 .ms-img{height:110px;border-radius:10px;display:grid;place-items:center;color:#fff}
 .ms-img img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 .ms-img svg{width:32px;height:32px}
+.ms-img b{font-size:30px;font-weight:900;letter-spacing:.03em}
 .ms-cat{font-size:15px;font-weight:800;color:var(--accent-ink);margin-top:10px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .ms-title{font-size:14px;font-weight:700;color:var(--ink);margin-top:4px;line-height:1.45}
 
