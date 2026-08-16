@@ -268,6 +268,9 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 .pcard:hover .pcard-link{gap:9px}
 .pcard.open .pcard-toggle i{transform:rotate(45deg)}
 .pcard.hide{opacity:0;transform:scale(.95)}
+.pcard-num{display:flex;align-items:center;justify-content:space-between;border-radius:12px;padding:10px 16px;background:linear-gradient(135deg,#0d2a45,#0f4d55);color:#fff}
+.pcard-num b{font-size:22px;font-weight:900;color:#7ce8d7;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.pcard-num i{font-style:normal;font-size:12px;font-weight:600;color:#9fb0c4;letter-spacing:.1em}
 @media (max-width:960px){.pcard-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.pcard-grid{grid-template-columns:1fr}}
 
