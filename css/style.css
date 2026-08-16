@@ -203,6 +203,18 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 .timeline .yr{font-weight:800;color:var(--accent-ink);font-size:16px}
 .timeline p{font-size:14.5px;color:var(--muted);margin-top:2px}
 
+/* 发展历程横向滑动栏 */
+.milestones{overflow:hidden;position:relative;padding:16px 0}
+.milestones::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--accent),var(--cyan),transparent);opacity:.5}
+.milestones-track{display:flex;gap:22px;width:max-content;animation:msScroll 42s linear infinite}
+.milestones:hover .milestones-track{animation-play-state:paused}
+.ms{flex:0 0 auto;width:236px;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);transition:.25s}
+.ms:hover{transform:translateY(-4px);border-left-color:var(--cyan);box-shadow:var(--shadow-lg)}
+.ms-year{font-size:21px;font-weight:800;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.ms-title{font-size:14px;font-weight:700;color:var(--ink);margin:3px 0 2px}
+.ms-desc{font-size:12px;color:var(--muted);line-height:1.55}
+@keyframes msScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* 表格 */
 .spec-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .spec-table th{background:var(--bg-soft);text-align:left;padding:14px 16px;font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line)}
