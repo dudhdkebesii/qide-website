@@ -120,6 +120,20 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdr
 .app .ico{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:#e9f6f4;font-size:26px}
 .app b{display:block;font-size:15px;font-weight:600}
 
+/* 应用领域卡片（富卡片版，3 列对称） */
+.app-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.app-card{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:18px;background:var(--bg);transition:.28s}
+.app-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--cyan));opacity:0;transition:.28s}
+.app-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.app-card:hover::before{opacity:1}
+.app-card .ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:28px;background:linear-gradient(135deg,#e6f6f4,#d8f1ee)}
+.app-card h3{font-size:18px;font-weight:700;margin:0}
+.app-card p{font-size:14px;color:var(--muted);line-height:1.7;flex:1;margin:0}
+.app-card .more{font-size:13.5px;font-weight:600;color:var(--accent-ink);display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.app-card .more:hover{gap:10px}
+@media (max-width:960px){.app-cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.app-cards{grid-template-columns:1fr}}
+
 /* ============ IR 横条 ============ */
 .ir{background:linear-gradient(120deg,var(--accent-ink),var(--accent-2));color:#fff}
 .ir .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
