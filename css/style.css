@@ -86,8 +86,8 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdr
 /* ============ 关于 ============ */
 .about .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .about-visual{position:relative}
-.about-visual .frame{border-radius:22px;overflow:hidden;background:linear-gradient(150deg,#0d2a45,#0f4d55);aspect-ratio:4/3;position:relative}
-.about-visual .frame::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 300px at 70% 30%,rgba(45,212,191,.5),transparent 60%),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:auto,40px 40px}
+.about-visual .frame{border-radius:22px;overflow:hidden;aspect-ratio:4/3;position:relative;background-color:#eef1f6}
+.about-visual .frame img{width:100%;height:100%;object-fit:cover;display:block}
 .about-visual .badge{position:absolute;left:-16px;bottom:28px;background:#fff;border-radius:16px;padding:18px 22px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:14px}
 .about-visual .badge b{font-size:26px;color:var(--accent-ink);font-weight:900}
 .about-visual .badge span{font-size:13px;color:var(--muted);line-height:1.4}
@@ -127,19 +127,21 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdr
 .app .ico{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:#e9f6f4;font-size:26px}
 .app b{display:block;font-size:15px;font-weight:600}
 
-/* 应用领域卡片（富卡片版：3 列对称 + 渐变背景 + SVG 线性图标） */
+/* 应用领域卡片（图片缩略图 + 点击展开详情，不跳转） */
 .app-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.app-card{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:28px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,var(--tint1,#eef7f6),var(--tint2,#e3f1ef));transition:.28s}
-.app-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--cyan));opacity:0;transition:.28s}
-.app-card::after{content:"";position:absolute;right:-34px;top:-34px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.6),transparent 70%);pointer-events:none}
+.app-card{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;background:var(--bg);overflow:hidden;transition:.28s;cursor:pointer}
 .app-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
-.app-card:hover::before{opacity:1}
-.app-card .ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.75);color:var(--accent-ink);box-shadow:0 6px 16px rgba(8,20,38,.08)}
-.app-card .ico svg{width:26px;height:26px}
-.app-card h3{font-size:18px;font-weight:700;margin:0}
-.app-card p{font-size:14px;color:var(--ink-2);line-height:1.7;flex:1;margin:0}
-.app-card .more{font-size:13.5px;font-weight:600;color:var(--accent-ink);display:inline-flex;align-items:center;gap:6px;transition:.2s}
-.app-card .more:hover{gap:10px}
+.app-img{aspect-ratio:4/3;overflow:hidden;background-color:#eef1f6}
+.app-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.app-card:hover .app-img img{transform:scale(1.08)}
+.app-body{padding:16px 22px 6px;display:flex;flex-direction:column;gap:8px}
+.app-body h3{font-size:18px;font-weight:700;margin:0}
+.app-body .intro{font-size:14px;color:var(--ink-2);line-height:1.7;margin:0}
+.app-body .detail{max-height:0;opacity:0;overflow:hidden;font-size:13.5px;color:var(--muted);line-height:1.75;margin:0;transition:max-height .45s ease,opacity .45s ease}
+.app-card.open .app-body .detail{max-height:260px;opacity:1}
+.app-toggle{display:inline-flex;align-items:center;gap:6px;margin:10px 22px 18px;padding:0;border:0;background:none;font-size:13.5px;font-weight:600;color:var(--accent-ink);cursor:pointer;align-self:flex-start}
+.app-toggle i{font-style:normal;transition:transform .3s}
+.app-card.open .app-toggle i{transform:rotate(45deg)}
 @media (max-width:960px){.app-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.app-cards{grid-template-columns:1fr}}
 
