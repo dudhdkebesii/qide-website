@@ -30,3 +30,22 @@ document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('subm
 document.querySelectorAll('.app-card').forEach(card=>{
   card.addEventListener('click',()=>card.classList.toggle('open'));
 });
+
+// 产品中心：分类筛选
+document.querySelectorAll('.filter-bar .fbtn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-bar .fbtn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.pcard').forEach(card=>{
+      const show=f==='all'||card.dataset.cat===f;
+      if(show){card.style.display='';requestAnimationFrame(()=>card.classList.remove('hide'));}
+      else{card.classList.add('hide');setTimeout(()=>{if(card.classList.contains('hide'))card.style.display='none';},280);}
+    });
+  });
+});
+
+// 产品卡片：点击展开详情
+document.querySelectorAll('.pcard').forEach(card=>{
+  card.addEventListener('click',()=>card.classList.toggle('open'));
+});
