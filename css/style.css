@@ -261,6 +261,27 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 @media (max-width:1100px){.adv-grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:640px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
 
+/* 企业愿景价值观 */
+.sub-h3{font-size:20px;font-weight:800;margin:36px 0 0;color:var(--ink)}
+.vision-hero{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.vh-card{position:relative;overflow:hidden;border-radius:18px;padding:34px 30px;color:#fff;background:linear-gradient(135deg,#0d2a45,#0f4d55);min-height:180px;display:flex;flex-direction:column;justify-content:center}
+.vh-card:nth-child(2){background:linear-gradient(135deg,var(--accent-ink),var(--accent-2))}
+.vh-card::after{content:'\201C';position:absolute;right:16px;top:-10px;font-size:120px;line-height:1;font-weight:900;color:rgba(255,255,255,.12);font-family:Georgia,serif}
+.vh-tag{font-size:13px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.75);text-transform:uppercase}
+.vh-text{font-size:clamp(20px,3vw,27px);font-weight:800;line-height:1.5;margin-top:12px}
+.four-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:16px}
+.four{text-align:center;padding:28px 16px;border:1px solid var(--line);border-radius:14px;background:var(--bg);transition:.25s}
+.four:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.four span{display:block;font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.08em}
+.four b{display:block;font-size:19px;font-weight:800;color:var(--ink);margin-top:8px}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:16px}
+.value{padding:22px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:14px;background:var(--bg);transition:.25s}
+.value:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-left-color:var(--cyan)}
+.value h4{font-size:15px;font-weight:700;color:var(--accent-ink);margin-bottom:6px}
+.value p{font-size:13px;color:var(--muted);line-height:1.75}
+@media (max-width:900px){.vision-hero{grid-template-columns:1fr}.four-grid,.value-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.four-grid,.value-grid{grid-template-columns:1fr}}
+
 /* 表格 */
 .spec-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .spec-table th{background:var(--bg-soft);text-align:left;padding:14px 16px;font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line)}
