@@ -51,7 +51,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdr
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.25s;border-radius:2px}
 
 /* ============ 首页 Hero ============ */
-.hero{position:relative;background-color:var(--navy);background-size:cover;background-position:center;color:#fff;overflow:hidden}
+.hero{position:relative;background:radial-gradient(1200px 600px at 80% -10%,#123456 0%,var(--navy) 45%,#060f1c 100%);color:#fff;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 20%,#000 30%,transparent 75%)}
 .hero .glow{position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.35),transparent 65%);filter:blur(10px)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:96px;padding-bottom:110px}
