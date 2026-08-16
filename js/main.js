@@ -25,3 +25,8 @@ document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('subm
   const btn=f.querySelector('[type=submit]');
   if(btn){btn.textContent='已提交（演示）';btn.disabled=true;}
 }));
+
+// 应用领域卡片：点击展开详情（不跳转）
+document.querySelectorAll('.app-card').forEach(card=>{
+  card.addEventListener('click',()=>card.classList.toggle('open'));
+});
