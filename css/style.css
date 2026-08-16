@@ -207,7 +207,7 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 /* 发展历程横向滑动栏 */
 .milestones{overflow:hidden;position:relative;padding:16px 0}
 .milestones::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--accent),var(--cyan),transparent);opacity:.5}
-.milestones-track{display:flex;gap:22px;width:max-content;animation:msScroll 42s linear infinite}
+.milestones-track{display:flex;gap:22px;width:max-content;animation:msScroll 22s linear infinite}
 .milestones:hover .milestones-track{animation-play-state:paused}
 .ms{flex:0 0 auto;width:230px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:var(--shadow);transition:.25s;overflow:hidden}
 .ms:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
