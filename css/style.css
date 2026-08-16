@@ -263,6 +263,8 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 .pcard.open .pcard-detail{max-height:140px;opacity:1;margin-top:2px}
 .pcard-toggle{display:inline-flex;align-items:center;gap:5px;margin-top:4px;padding:0;border:0;background:none;font-size:13px;font-weight:600;color:var(--accent-ink);cursor:pointer}
 .pcard-toggle i{font-style:normal;transition:transform .3s}
+.pcard-link{display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:13px;font-weight:600;color:var(--accent-ink)}
+.pcard:hover .pcard-link{gap:9px}
 .pcard.open .pcard-toggle i{transform:rotate(45deg)}
 .pcard.hide{opacity:0;transform:scale(.95)}
 @media (max-width:960px){.pcard-grid{grid-template-columns:repeat(2,1fr)}}
