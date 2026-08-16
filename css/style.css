@@ -380,3 +380,12 @@ footer{background:var(--navy);color:#9fb0c4;padding:64px 0 28px;font-size:14px}
 .about-video video{width:100%;border-radius:18px;box-shadow:var(--shadow-lg);background:#000;display:block;aspect-ratio:16/9;object-fit:cover}
 .about-video .video-cap{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
 @media (max-width:900px){.about-flex{grid-template-columns:1fr}}
+
+/* 第六格高亮卡（核心技术）+ 价值观末卡补角 */
+.pt-hl{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent}
+.pt-hl:hover{border-color:transparent}
+.pt-hl .pt-ico{background:rgba(4,32,28,.12);color:#04201c}
+.pt-hl h3{color:#04201c;font-size:18px}
+.pt-hl p{color:rgba(4,32,28,.82)}
+.pt-more{font-size:13px;font-weight:700;color:#04201c;margin-top:auto}
+@media (min-width:641px){.value-grid .value:last-child{grid-column:span 2}}
